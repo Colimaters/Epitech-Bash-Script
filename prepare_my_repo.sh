@@ -1,8 +1,8 @@
 #!/bin/bash
 
-pbase='/home/kenshiro/base/norm/*'
-pmath='/home/kenshiro/base/math/*'
-psfml='/home/kenshiro/base/csfml/*'
+pbase='~/base/norm/*'
+pmath='~/base/math/*'
+psfml='~/base/csfml/*'
 
 if [ $# != 0 ]; then
     nomrepo=$1
