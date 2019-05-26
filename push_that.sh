@@ -23,3 +23,5 @@ else
     git commit -m "$commit"
     git push
 fi
+read -p "Press enter to clear !" wait
+clear

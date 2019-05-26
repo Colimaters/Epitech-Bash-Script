@@ -69,3 +69,5 @@ elif [ $type = "csfml" ]; then
 else
     echo -e "Ok rien de spécial"
 fi
+read -p "Press enter to clear !" wait
+clear
