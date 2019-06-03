@@ -13,10 +13,11 @@ elif [ $# = 1 ] && [ $1 = "-v" ]; then
     read -p "Enter your commit message : " commit
     echo
     git commit -m "$commit"
-    if [ $(echo $?) = 1 ]; then
+    git push
+    if [ $(echo $?) -ne 0 ]; then
+        echo -e "An error occurs !\n"
         exit 84
     fi
-    git push
     echo -e "\nPush files to your repo !\n"
 else
     git add --all
