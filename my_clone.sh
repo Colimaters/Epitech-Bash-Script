@@ -1,6 +1,11 @@
 #!/bin/bash
 
 clear
+
+if [ $# != 0 ]; then
+    echo -e "Pas de besoin d'arguments pour utiliser ce script !\n\n"
+fi
+
 echo -e "Ok commençons à cloner !\n"
 read -p "Qui est le propriétaire du repo (login sans @) ? " login
 read -p "Et le nom du repo ? " nomrepo
