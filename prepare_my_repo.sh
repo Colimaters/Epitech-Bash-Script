@@ -53,17 +53,28 @@ read -p "Quel type de repo dois-je faire (base) / (math) / (csfml) ? " type
 if [ -z $type ]; then
     echo -e "Ok rien de spécial"
 elif [ $type = "base" ]; then
-    cp -r ~/base/norm $nomrepo
-    echo -e "Copie de la base C dans le repo"
+
+    cp -r ~/base/norm/* $nomrepo
+    echo -e "Copie de la base C dans le repo\n"
+
+    read -p "Quel est le nom du binaire à créer ? " nombinaire
+    if [ -z $nombinaire ]; then
+        echo -e "Ok, on verras ça plus tard !"
+    else
+        sed -i "s/NAME = .*/NAME = $nombinaire/" ./$nomrepo/src/Makefile
+        echo -e "Le binaire s'appelle : $nombinaire"
+    fi
+
 elif [ $type = "math" ]; then
-    cp -r ~/base/math $nomrepo
+    cp -r ~/base/math/* $nomrepo
     echo -e "Copie de la base des math"
 elif [ $type = "csfml" ]; then
-    cp -r ~/base/csfml $nomrepo
+    cp -r ~/base/csfml/* $nomrepo
     echo -e "Copie de la base de la CSFML"
 else
     echo -e "Type inconnue !"
 fi
+
 echo
 read -p "Press enter to clear !" wait
 clear
